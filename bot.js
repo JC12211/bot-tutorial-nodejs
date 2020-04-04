@@ -1,6 +1,7 @@
 var HTTPS = require('https');
 var cool = ['¯\\_(ツ)_/¯', '(ﾟ∩ﾟ)', '(ノಠ益ಠ)ノ彡┻━┻', '(▀̿Ĺ̯▀̿ ̿)', '( ͡° ͜ʖ ͡°)', '( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)', 'ヽ( •_)ᕗ',
-               '(☞ﾟ∀ﾟ)☞',  '(ง •̀_•́)ง', '(｡)(｡)', 'ᕙ(`▽´)ᕗ', '╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ', '\m/_(>_<)_\m/', 'ϞϞ(๑⚈ ․̫ ⚈๑)∩'];
+               '(☞ﾟ∀ﾟ)☞',  '(ง •̀_•́)ง', '(｡)(｡)', 'ᕙ(`▽´)ᕗ', '╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ', '\m/_(>_<)_\m/', 'ϞϞ(๑⚈ ․̫ ⚈๑)∩',
+               'ʕ·͡ᴥ·ʔ', '乁ʕ •̀ ۝ •́ ʔㄏ', 'U・ᴥ・U', '><((((`>', '(×_×)', '†', '(」゜ロ゜)」✞', '△'];
 
 var botID = process.env.BOT_ID;
 
@@ -12,7 +13,7 @@ function respond() {
       tooCool = /^\/too cool$/;
       happy = /^\/happy$/;
       gang = /^\/gang$/;
-      dab = /^\/dab$/;
+      dab = /^\/dab/;
       myMan = /^\/my/;
       fight = /^\/fight me$/;
       boobies = /^\/boobies$/;
@@ -20,6 +21,14 @@ function respond() {
       wizard = /^\/abracadabra/;
       rock = /^\/rock on!!!$/;
       pikachu = /^\/pika pika$/;
+      bear = /^\/bear$/;
+      bearAtt = /^\/bear attack/;
+      dog = /^\/dog$/;
+      fish = /^\/fish$/;
+      dead = /^\/RIP/;
+      cross = /^\/cross$/;
+      praise = /^\/praise Jesus/;
+      illuminati = /^\/illuminati/;
 
   if(request.text && shrug.test(request.text)) {
     this.res.writeHead(200);
@@ -89,6 +98,46 @@ function respond() {
   else if(request.text && pikachu.test(request.text)) {
     this.res.writeHead(200);
     postMessage(13);
+    this.res.end()
+  }
+  else if(request.text && bear.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage(14);
+    this.res.end()
+  }
+  else if(request.text && bearAtt.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage(15);
+    this.res.end()
+  }
+  else if(request.text && dog.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage(16);
+    this.res.end()
+  }
+  else if(request.text && fish.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage(17);
+    this.res.end()
+  }
+  else if(request.text && dead.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage(18);
+    this.res.end()
+  }
+  else if(request.text && cross.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage(19);
+    this.res.end()
+  }
+  else if(request.text && praise.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage(20);
+    this.res.end()
+  }
+  else if(request.text && illuminati.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage(21);
     this.res.end()
   }
   
