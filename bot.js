@@ -1,6 +1,6 @@
 var HTTPS = require('https');
 var cool = ['¯\\_(ツ)_/¯', '(ﾟ∩ﾟ)', '(ノಠ益ಠ)ノ彡┻━┻', '(▀̿Ĺ̯▀̿ ̿)', '( ͡° ͜ʖ ͡°)', '( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)', 'ヽ( •_)ᕗ',
-               '(☞ﾟ∀ﾟ)☞',  '(ง •̀_•́)ง', '(｡)(｡)'];
+               '(☞ﾟ∀ﾟ)☞',  '(ง •̀_•́)ง', '(｡)(｡)', 'ᕙ(`▽´)ᕗ', '╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ', '\m/_(>_<)_\m/', 'ϞϞ(๑⚈ ․̫ ⚈๑)∩'];
 
 var botID = process.env.BOT_ID;
 
@@ -13,9 +13,13 @@ function respond() {
       happy = /^\/happy$/;
       gang = /^\/gang$/;
       dab = /^\/dab$/;
-      myMan = /^\/my$/;
+      myMan = /^\/my/;
       fight = /^\/fight me$/;
       boobies = /^\/boobies$/;
+      flex = /^\/flex/;
+      wizard = /^\/abracadabra/;
+      rock = /^\/rock on!!!$/;
+      pikachu = /^\/pika pika$/;
 
   if(request.text && shrug.test(request.text)) {
     this.res.writeHead(200);
@@ -65,6 +69,26 @@ function respond() {
   else if(request.text && boobies.test(request.text)) {
     this.res.writeHead(200);
     postMessage(9);
+    this.res.end()
+  }
+  else if(request.text && flex.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage(10);
+    this.res.end()
+  }
+  else if(request.text && wizard.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage(11);
+    this.res.end()
+  } 
+  else if(request.text && rock.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage(12);
+    this.res.end()
+  }
+  else if(request.text && pikachu.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage(13);
     this.res.end()
   }
   
