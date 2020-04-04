@@ -148,7 +148,7 @@ function respond() {
     postMessage(22);
     this.res.end()
   }
-  else if(request.text && shutUp.test(request.text) && request.user_id == 29726070) {
+  else if(request.text && yeet.test(request.text) && request.user_id == 29726070) {
     this.res.writeHead(200);
     postMessage(23);
     this.res.end()
