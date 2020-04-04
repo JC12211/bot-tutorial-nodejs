@@ -1,7 +1,7 @@
 var HTTPS = require('https');
 var cool = ['¯\\_(ツ)_/¯', '(ﾟ∩ﾟ)', '(ノಠ益ಠ)ノ彡┻━┻', '(▀̿Ĺ̯▀̿ ̿)', '( ͡° ͜ʖ ͡°)', '( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)', 'ヽ( •_)ᕗ',
                '(☞ﾟ∀ﾟ)☞',  '(ง •̀_•́)ง', '(｡)(｡)', 'ᕙ(`▽´)ᕗ', '╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ', '\m/_(>_<)_\m/', 'ϞϞ(๑⚈ ․̫ ⚈๑)∩',
-               'ʕ·͡ᴥ·ʔ', '乁ʕ •̀ ۝ •́ ʔㄏ', 'U・ᴥ・U', '><((((`>', '(×_×)', '†', '(」゜ロ゜)」✞', '△'];
+               'ʕ·͡ᴥ·ʔ', '乁ʕ •̀ ۝ •́ ʔㄏ', 'U・ᴥ・U', '><((((`>', '(×_×)', '†', '(」゜ロ゜)」✞', '△', 'Yea, shut up, you loser!'];
 
 var botID = process.env.BOT_ID;
 
@@ -29,6 +29,7 @@ function respond() {
       cross = /^\/cross$/;
       praise = /^\/praise Jesus/;
       illuminati = /^\/illuminati/;
+      shutUp = /^\/Shut up/;
 
   if(request.text && shrug.test(request.text)) {
     this.res.writeHead(200);
@@ -138,6 +139,11 @@ function respond() {
   else if(request.text && illuminati.test(request.text)) {
     this.res.writeHead(200);
     postMessage(21);
+    this.res.end()
+  }
+  else if(request.text && illuminati.test(request.text) && request.user_id(29726070)) {
+    this.res.writeHead(200);
+    postMessage(22);
     this.res.end()
   }
   
