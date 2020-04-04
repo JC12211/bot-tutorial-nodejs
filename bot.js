@@ -1,7 +1,8 @@
 var HTTPS = require('https');
 var cool = ['¯\\_(ツ)_/¯', '(ﾟ∩ﾟ)', '(ノಠ益ಠ)ノ彡┻━┻', '(▀̿Ĺ̯▀̿ ̿)', '( ͡° ͜ʖ ͡°)', '( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)', 'ヽ( •_)ᕗ',
                '(☞ﾟ∀ﾟ)☞',  '(ง •̀_•́)ง', '(｡)(｡)', 'ᕙ(`▽´)ᕗ', '╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ', '|m|_(>_<)_|m|', 'ϞϞ(๑⚈ ․̫ ⚈๑)∩',
-               'ʕ·͡ᴥ·ʔ', '乁ʕ •̀ ۝ •́ ʔㄏ', 'U・ᴥ・U', '><((((`>', '(×_×)', '†', '(」゜ロ゜)」✞', '△', 'Yea, shut up, you loser!'];
+               'ʕ·͡ᴥ·ʔ', '乁ʕ •̀ ۝ •́ ʔㄏ', 'U・ᴥ・U', '><((((`>', '(×_×)', '†', '(」゜ロ゜)」✞', '△', 'Yea, shut up, you loser!',
+               'Skeet skeet!'];
 
 var botID = process.env.BOT_ID;
 
@@ -30,6 +31,7 @@ function respond() {
       praise = /^\/praise Jesus/;
       illuminati = /^\/illuminati/;
       shutUp = /^\/Shut up/;
+      yeet = /^\/Yeet yeet$/;
 
   if(request.text && shrug.test(request.text)) {
     this.res.writeHead(200);
@@ -144,6 +146,11 @@ function respond() {
   else if(request.text && shutUp.test(request.text) && request.name == 'Josh Carnes') {
     this.res.writeHead(200);
     postMessage(22);
+    this.res.end()
+  }
+  else if(request.text && shutUp.test(request.text) && request.user_id == '29726070') {
+    this.res.writeHead(200);
+    postMessage(23);
     this.res.end()
   }
   
