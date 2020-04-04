@@ -5,11 +5,11 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy$/;
+      shrug = /^\/cool guy$/;
 
-  if(request.text && botRegex.test(request.text)) {
+  if(request.text && shrug.test(request.text)) {
     this.res.writeHead(200);
-    postMessage(1);
+    postMessage(0);
     this.res.end();
   } else {
     console.log("don't care");
