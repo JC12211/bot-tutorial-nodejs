@@ -1,26 +1,27 @@
 var HTTPS = require('https');
-var cool = require('cool-ascii-faces');
+var cool = ['¯\\_(ツ)_/¯', '(ﾟ∩ﾟ)', '(ノಠ益ಠ)ノ彡┻━┻', '(▀̿Ĺ̯▀̿ ̿)'];
 
 var botID = process.env.BOT_ID;
 
-function respond(message) {
-        const messageText = message.text;
+function respond() {
+  var request = JSON.parse(this.req.chunks[0]),
+      botRegex = /^\/cool guy$/;
 
-        // Learn about regular expressions in JavaScript: https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions
-        const botRegex = /^\/shrug/;
+  if(request.text && botRegex.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage(1);
+    this.res.end();
+  } else {
+    console.log("don't care");
+    this.res.writeHead(200);
+    this.res.end();
+  }
+}
 
-        // Check if the GroupMe message has content and if the regex pattern is true
-        if (messageText && botRegex.test(messageText)) {
-            // Check is successful, return a message!
-            return '¯\\_(ツ)_/¯';
-        }
-
-        return null;
-    };
-
-function postMessage(messageText) {
+function postMessage(i) {
   var botResponse, options, body, botReq;
 
+  botResponse = cool[i];
 
   options = {
     hostname: 'api.groupme.com',
@@ -30,10 +31,10 @@ function postMessage(messageText) {
 
   body = {
     "bot_id" : botID,
-    "text" : messageText
+    "text" : botResponse
   };
 
- 
+  console.log('sending ' + botResponse + ' to ' + botID);
 
   botReq = HTTPS.request(options, function(res) {
       if(res.statusCode == 202) {
