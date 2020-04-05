@@ -182,7 +182,7 @@ function respond() {
     postMessage(27);
     this.res.end()
   }
-  else if(request.text && swat.test(request.text) && request.user_id != 29726070) {
+  else if(request.text && swat.test(request.text) && request.user_id == 29726070) {
     this.res.writeHead(200);
     postMessage(28);
     this.res.end()
@@ -192,7 +192,7 @@ function respond() {
     postMessage(29);
     this.res.end()
   }
-  else if(request.text && kame.test(request.text) && request.user_id != 29726070) {
+  else if(request.text && kame.test(request.text) && request.user_id == 29726070) {
     this.res.writeHead(200);
     postMessage(30);
     this.res.end()
