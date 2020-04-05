@@ -5,7 +5,7 @@ var cool = ['¯\\_(ツ)_/¯', '(ﾟ∩ﾟ)', '(ノಠ益ಠ)ノ彡┻━┻', '(
                'Skeet skeet!', 'Get rekt, scrub!!!',
             '乁ʕ •̀ ۝ •́ ʔㄏ    (ง •̀_•́)ง  (ง •̀_•́)ง \n ϞϞ(๑⚈ ․̫ ⚈๑)∩     ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ \n ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°) \n 乁ʕ •̀ ۝ •́ ʔㄏ  乁ʕ •̀ ۝ •́ ʔㄏ  ヽ( •_)ᕗ \n (ノಠ益ಠ)ノ彡┻━┻  ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ',
                'Not for you, foul beast!!!', '(⌐■_■)–︻╦╤─', '(⌐■_■)–︻╦╤─\n(⌐■_■)–︻╦╤─ (⌐■_■)–︻╦╤─\n(⌐■_■)–︻╦╤─ (⌐■_■)–︻╦╤─\n(⌐■_■)–︻╦╤─',
-               '(>`.´)> ~=0', '(>`ਊ´)> ==>===)==D))'];
+               '(>`.´)> ~=0', '(>`ਊ´)> ==>===)==D))', 'You haven\'t the strength to summon an attack of that power!!!'];
 
 var botID = process.env.BOT_ID;
 
@@ -195,6 +195,11 @@ function respond() {
   else if(request.text && kame.test(request.text) && request.user_id == 29726070) {
     this.res.writeHead(200);
     postMessage(30);
+    this.res.end()
+  }
+  else if(request.text && kame.test(request.text) && request.user_id != 29726070) {
+    this.res.writeHead(200);
+    postMessage(31);
     this.res.end()
   }
   
